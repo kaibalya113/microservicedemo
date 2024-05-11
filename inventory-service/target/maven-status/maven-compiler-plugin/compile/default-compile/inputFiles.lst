@@ -1,0 +1,7 @@
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/model/Inventory.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/dto/InventoryResponse.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/repository/InventoryRepository.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/dto/InventoryRequest.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/service/InventoryService.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/InventoryServiceApplication.java
+/Users/krishna/Downloads/microservices/inventory-service/src/main/java/com/inventory/inventoryservice/controller/InventoryController.java
