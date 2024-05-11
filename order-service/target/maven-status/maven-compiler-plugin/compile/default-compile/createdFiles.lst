@@ -6,6 +6,7 @@ com/order/orderservice/model/Order.class
 com/order/orderservice/controller/OrderController.class
 com/order/orderservice/dto/InventoryResponse$InventoryResponseBuilder.class
 com/order/orderservice/config/WebClientConfig.class
+com/order/orderservice/event/OrderPlacedEvent.class
 com/order/orderservice/dto/OrderRequest.class
 com/order/orderservice/dto/InventoryResponse.class
 com/order/orderservice/OrderServiceApplication.class

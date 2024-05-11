@@ -1,5 +1,3 @@
 
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ÿ‘Œœò1
-ˆ
-java:S1612("GReplace this lambda with method reference 'OrderLineItems::getSkuCode'.(ñŸ–öÿÿÿÿÿJ$066dd817-9248-47c1-b05e-a287047f509b
+
+java:S1612/"GReplace this lambda with method reference 'OrderLineItems::getSkuCode'.(ñŸ–öÿÿÿÿÿ8‘–Ô±ö1J$3399707f-0b7f-4d3b-9fa1-2c0989b820ac

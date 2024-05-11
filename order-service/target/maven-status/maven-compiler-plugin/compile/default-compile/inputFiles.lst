@@ -1,5 +1,6 @@
 /Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/config/WebClientConfig.java
 /Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/OrderServiceApplication.java
+/Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/event/OrderPlacedEvent.java
 /Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/dto/OrderRequest.java
 /Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/dto/OderResponse.java
 /Users/krishna/Downloads/microservices/order-service/src/main/java/com/order/orderservice/repository/OrderRepository.java

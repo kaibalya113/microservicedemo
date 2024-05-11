@@ -3,11 +3,15 @@ package com.order.orderservice.service;
 import com.order.orderservice.dto.InventoryResponse;
 import com.order.orderservice.dto.OrderLineItemsDto;
 import com.order.orderservice.dto.OrderRequest;
+import com.order.orderservice.event.OrderPlacedEvent;
 import com.order.orderservice.model.Order;
 import com.order.orderservice.model.OrderLineItems;
 import com.order.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,13 +23,16 @@ import java.util.UUID;
 @Service
 @Transactional
 @RequiredArgsConstructor
+@Slf4j
 public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
     private final WebClient.Builder webClient;
+    private final KafkaTemplate<String, OrderPlacedEvent> kafkaTemplate;
 
-
+    @Value("${spring.kafka.template.default-topic}")
+    private String kafkaTopic;
     public void placeOrder(OrderRequest orderRequest){
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
@@ -49,6 +56,8 @@ public class OrderService {
                 .allMatch(InventoryResponse::isInStock);
       if(allProductsInStock){
           orderRepository.save(order);
+          kafkaTemplate.send(kafkaTopic, new OrderPlacedEvent(order.getOrderNumber()));
+          log.info("Order Placed successfully");
       }else{
           throw  new IllegalArgumentException("Product is not in stock");
       }
